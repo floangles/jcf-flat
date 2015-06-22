@@ -1,0 +1,27 @@
+#banner {
+background-image:url(bg_home.jpg);
+background-size: cover;
+padding-top: 250px;
+padding-bottom: 350px;
+font-size: 50px;
+text-align: center;
+margin-top: 0px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+#home_title {
+  font-size: 50px;
+  color: white;
+ }
+
+#h2_home {
+  font-size: 30px;
+  color: $gray-darker;
+
+}
+#featured {
+  padding: 100px;
+}
