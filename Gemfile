@@ -31,6 +31,8 @@ gem 'simple_form'
 
 gem 'figaro'
 
+gem 'devise'
+
 gem 'aws-sdk', '< 2.0'
 
 gem 'paperclip'
