@@ -6,10 +6,9 @@ class Place < ActiveRecord::Base
   validates :zipcode, presence: true
   validates :city, presence: true
   validates :description, presence: true
-  validates :name, presence: true
   validates :capacity, presence: true
   validates :rooms, presence: true
   validates :beds, presence: true
   validates :rate, presence: true
-  validates :available, presence: true
+  validates :available, inclusion: { in: [true, false] }
 end

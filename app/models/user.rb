@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :bookings, dependent: :destroy
-  has_many :places, through: :bookings
+  has_many :places
 
   validates :first_name, uniqueness: { scope: :last_name }
   validates :first_name, presence: true
@@ -16,5 +16,5 @@ class User < ActiveRecord::Base
   validates :zipcode, presence: true
   validates :city, presence: true
   validates :sex, presence: true
-  validates :description, presence: true, uniqueness: true
+  validates :description, presence: true
 end
