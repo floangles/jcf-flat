@@ -23,7 +23,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">
-        <%= image_tag "logo.jpg" %>
+        <%= image_tag "logo.svg" %>
       </a>
     </div>
 
@@ -76,10 +76,22 @@
 </nav>
 
 
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 <%= yield %>
+<div id="footer">
 
+  <div>
+    <strong> Follow us !
+    </strong>
+    <%= link_to "https://www.facebook.com/john.maurin.9" do %>
+      <i class="fa fa-facebook-square"></i>
+      <% end %>
+      <%= link_to "https://www.facebook.com/john.maurin.9" do %>
+      <i class="fa fa-linkedin-square"></i>
+      <% end %>
+      <%= link_to "https://www.facebook.com/john.maurin.9" do %>
+      <i class="fa fa-twitter-square"></i>
+      <% end %>
+  </div>
+</div>
 </body>
 </html>
