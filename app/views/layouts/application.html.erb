@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
   <title>JcfFlat</title>
@@ -43,7 +43,7 @@
               <% if current_user.provider%>
                 <%= image_tag current_user.profile_picture, class: "img-avatar" %>
               <% else %>
-                <%= image_tag current_user.picture, class: "img-avatar" %>
+                <%= image_tag current_user.picture.url(:thumb), class: "img-avatar" %>
               <!-- ma facebook marche pas -->
               <% end %>
         <!-- la deuxieme marche -->
