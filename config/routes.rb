@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   resource  :user, only: [:show, :edit, :update]
 
   namespace :profile do
-    resources :places, only: [:index]
+    resources :places
   end
 
-  resources :places
+  resources :places, only: [:index, :show]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

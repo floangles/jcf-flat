@@ -1,1 +1,9 @@
 <h1>My PLACES</h1>
+
+
+<% @places.each do |place| %>
+  <h1> <%= place.name %> </h1>
+<% end %>
+
+<%= link_to "add a new place", new_profile_place_path %>
+

@@ -1,6 +1,19 @@
-<h1>hello la list</h1>
+<h1 class="title-style"> Choose a flat !</h1>
 
 <% @places.each do |place| %>
-<p> name : <%= place.name%>  address :<%= place.address%>, rooms : <%= place.address%></p>
+
+  <p> name : <%= place.name%>  address :<%= place.address%>, rooms : <%= place.address%></p>
+
+  <div class="list_appart">
+
+    <p>
+      name : <%= place.name%>,<br>
+      city :<%= place.city%>,
+      address :<%= place.address%>,
+      rooms : <%= place.address%>
+    </p>
+  </div>
 
 <% end %>
+
+<%= link_to "create a new appart", new_place_path %>

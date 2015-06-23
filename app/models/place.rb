@@ -1,5 +1,6 @@
 class Place < ActiveRecord::Base
   has_many :bookings
+  belongs_to :user
 
   validates :name, presence: true
   validates :address, presence: true

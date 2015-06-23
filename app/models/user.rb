@@ -7,6 +7,13 @@ class User < ActiveRecord::Base
   has_many :bookings, dependent: :destroy
   has_many :places
 
+  has_attached_file :picture,
+    styles: { medium: "300x300>", thumb: "100x100>" },
+    default_url: "/images/user/:style/missing.png"
+
+  validates_attachment_content_type :picture,
+    content_type: /\Aimage\/.*\z/
+
   validates :first_name, presence: true, on: :update
   validates :first_name, presence: true, on: :update
   validates :last_name, presence: true, on: :update
