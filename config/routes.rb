@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :places
+  resources :places, only: [:create, :new]
 
   devise_for :users
   root to: "home#index"
