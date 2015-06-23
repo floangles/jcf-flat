@@ -37,6 +37,8 @@ gem 'aws-sdk', '< 2.0'
 
 gem 'paperclip'
 
+gem 'fog'
+
 gem 'rails_12factor', group: :production
 
 gem 'puma',           group: :production

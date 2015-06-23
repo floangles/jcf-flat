@@ -7,4 +7,4 @@ Paperclip::Attachment.default_options[:s3_credentials] = {
   secret_access_key:  ENV['AWS_SECRET_ACCESS_KEY']  # /
 }
 
-Paperclip::Attachment.default_options[:storage] = :fog
+# Paperclip::Attachment.default_options[:storage] = :fog

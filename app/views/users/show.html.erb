@@ -6,11 +6,8 @@
   <h1>Here are your profile details</h1>
 
   <div>
-    <!-- <% if @user.picture.url %> -->
       <%= image_tag @user.picture.url(:medium), class: "img-circle" %>
-    <!-- <% else %>
-      <%= image_tag 'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png', class: "img-circle" %>
-    <% end %> -->
+
   </div>
 
   <p><b>First name</b> <%= @user.first_name %></p>
