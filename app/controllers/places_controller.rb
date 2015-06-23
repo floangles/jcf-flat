@@ -8,6 +8,7 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.new(place_params)
+    @place.save
     if @place.save
       redirect_to root_path
     else
@@ -18,7 +19,7 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :address, :zipcode, :city, :capacity, :rooms, :beds, :description)
+    params.require(:place).permit(:name, :address, :zipcode, :city, :capacity, :rooms, :beds, :description, :rate, :available)
   end
 
 end
