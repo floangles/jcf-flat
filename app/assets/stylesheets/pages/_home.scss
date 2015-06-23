@@ -23,6 +23,22 @@ margin-top: 0px;
 
 }
 #featured {
-  padding: 100px;
+  margin: 100px;
 }
 
+.featured_image {
+ width: 200px;
+ height: 200px;
+}
+
+.text_featured {
+  color: $gray-dark;
+  font-size:50px;
+  text-align: center;
+
+}
+
+#h2_featured {
+  text-align: center;
+  margin-bottom: 50px;
+}

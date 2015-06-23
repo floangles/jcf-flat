@@ -1,19 +1,22 @@
 <h1 class="title-style"> Choose a flat !</h1>
 
 <% @places.each do |place| %>
-
-  <p> name : <%= place.name%>  address :<%= place.address%>, rooms : <%= place.address%></p>
-
   <div class="list_appart">
-
     <p>
       name : <%= place.name%>,<br>
       city :<%= place.city%>,
       address :<%= place.address%>,
-      rooms : <%= place.address%>
+      rooms : <%= place.rooms%>
+      <%= link_to "voir l'appart", place_path(place) %>
     </p>
+    <div>
+      <%= image_tag place.picture.url(:medium) %>
+    </div>
   </div>
-
 <% end %>
+
+
+<%= link_to "create a new appart", new_place_path %>
+
 
 
