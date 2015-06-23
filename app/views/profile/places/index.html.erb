@@ -2,8 +2,25 @@
 
 
 <% @places.each do |place| %>
-  <h1> <%= place.name %> </h1>
+  <h2> <%= place.name %> </h2>
+  <p> city : <%= place.city %></p>
+  <p> address : <%= place.address %></p>
+  <p> capacity : <%= place.capacity %></p>
+  <p> number of rooms : <%= place.rooms %></p>
+  <p> description : <%= place.description%></p>
+  <p> price : <%= place.rate %></p>
+  <p> available <%= place.available %></p>
+
+
+  <%= link_to "Delete", profile_place_path(place),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
+  <%= link_to "edit", edit_profile_place_path(place) %>
 <% end %>
 
+
+
 <%= link_to "add a new place", new_profile_place_path %>
+
 

@@ -2,7 +2,8 @@ module Profile
   class PlacesController < ApplicationController
     layout 'profile'
 
-    before_action :authenticate_user!, :set_place, only: [:show, :destroy, :edit, :update]
+    before_action :authenticate_user!
+    before_action :set_place, only: [:show, :destroy, :edit, :update]
 
 
     def index
@@ -14,8 +15,9 @@ module Profile
     end
 
     def create
-      @place = Place.new(place_params)
+      @place = current_user.places.new(place_params)
       @place.save
+
       if @place.save
         redirect_to profile_places_path
       else
@@ -28,7 +30,10 @@ module Profile
 
     def destroy
       @place.destroy
-      redirect_to profil_places_path
+      redirect_to profile_places_path
+    end
+
+    def edit
     end
 
     def update
@@ -37,13 +42,13 @@ module Profile
     end
 
     def set_place
-    @place = Place.find(params[:id])
+    @place = current_user.places.find(params[:id])
     end
 
     private
 
     def place_params
-      params.require(:place).permit(:name, :address, :zipcode, :city, :capacity, :rooms, :beds, :description, :rate, :available)
+      params.require(:place).permit(:name, :address, :zipcode, :city, :capacity, :rooms, :beds, :description, :rate, :available, :picture)
     end
 
   end
