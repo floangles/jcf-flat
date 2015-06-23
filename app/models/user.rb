@@ -7,14 +7,14 @@ class User < ActiveRecord::Base
   has_many :bookings, dependent: :destroy
   has_many :places
 
-  validates :first_name, uniqueness: { scope: :last_name }
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates :first_name, presence: true, on: :update
+  validates :first_name, presence: true, on: :update
+  validates :last_name, presence: true, on: :update
   validates :email, presence: true, uniqueness: true
-  validates :phone_number, presence: true
-  validates :address, presence: true
-  validates :zipcode, presence: true
-  validates :city, presence: true
-  validates :sex, presence: true
-  validates :description, presence: true
+  validates :phone_number, presence: true, on: :update
+  validates :address, presence: true, on: :update
+  validates :zipcode, presence: true, on: :update
+  validates :city, presence: true, on: :update
+  validates :sex, presence: true, on: :update
+  validates :description, presence: true, on: :update
 end
