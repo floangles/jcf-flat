@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # get 'bookings/update'
 
   root to: "home#index"
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
   resources :places do
     resources :bookings, only: [:new, :create]

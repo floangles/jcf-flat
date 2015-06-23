@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
   <title>JcfFlat</title>
@@ -38,7 +38,17 @@
           </li>
           <li class="dropdown">
             <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
-              <%= image_tag "http://placehold.it/30x30", class: "img-avatar" %>
+
+<!-- TO DOOOOOOO -->
+              <% if current_user.provider%>
+                <%= image_tag current_user.profile_picture, class: "img-avatar" %>
+              <% else %>
+                <%= image_tag current_user.picture.url(:thumb), class: "img-avatar" %>
+              <!-- ma facebook marche pas -->
+              <% end %>
+        <!-- la deuxieme marche -->
+<!-- TO DOOOOOOOO -->
+
               Profile <span class="caret"></span>
             <% end %>
             <ul class="dropdown-menu" role="menu">
@@ -60,12 +70,20 @@
             </ul>
           </li>
         <% else %>
+
+            <li>
+              <%= link_to "Connexion", new_user_session_path %>
+            </li>
+            <!-- Facebook login -->
+            <li>
+              <%= link_to "Connect with Facebook", user_omniauth_authorize_path(:facebook) %>
+            </li>
+
+
           <li>
             <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path %>
           </li>
-          <li>
-            <%= link_to t(".sign_in", default: "Sign in"), new_user_session_path %>
-          </li>
+
         <% end %>
         <li>
           <%= link_to t(".top_call_to_action", default: "Rent your flat"), "#", class: "btn" %>
