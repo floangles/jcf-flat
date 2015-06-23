@@ -1,0 +1,6 @@
+<h1>hello la list</h1>
+
+<% @places.each do |place| %>
+<p>--> name : <%= place.name%>  address :<%= place.address%>, rooms : <%= place.address%></p>
+<%= image_tag(place.picture) %>
+<% end %>

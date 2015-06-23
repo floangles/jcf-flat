@@ -1,6 +1,11 @@
 class PlacesController < ApplicationController
 
 
+  def index
+    @places = Place.where(city: params[:city])
+  end
+
+
   def new
     @place = Place.new
   end
@@ -23,5 +28,6 @@ class PlacesController < ApplicationController
   end
 
 end
+
 
 
