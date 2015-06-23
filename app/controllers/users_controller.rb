@@ -10,7 +10,11 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
-    # redirection tbd
+    if @user.save
+      redirect_to user_path
+    else
+      render :edit
+    end
   end
 
 
