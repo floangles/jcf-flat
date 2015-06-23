@@ -43,6 +43,7 @@ gem 'rails_12factor', group: :production
 
 gem 'puma',           group: :production
 
+
 gem 'omniauth-facebook'
 
 # Use ActiveModel has_secure_password

@@ -14,7 +14,16 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
-  resource  :user,    only: [:show, :edit, :update]
+  resource  :user, only: [:show, :edit, :update]
+
+  namespace :profile do
+    resources :places
+  end
+
+  resources :places, only: [:index, :show]
+
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

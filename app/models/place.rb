@@ -1,5 +1,6 @@
 class Place < ActiveRecord::Base
   has_many :bookings
+  belongs_to :user
 
   has_attached_file :picture,
     styles: { large: "900x900>", medium: "300x300>", thumb: "100x100>" },
