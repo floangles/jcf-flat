@@ -9,6 +9,5 @@ class Place < ActiveRecord::Base
   validates :capacity, presence: true
   validates :rooms, presence: true
   validates :beds, presence: true
-  validates :rate, presence: true
   validates :available, inclusion: { in: [true, false] }
 end
