@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-
+before_action :set_place, only: [:show, :destroy, :edit, :update]
 
   def index
     @places = Place.where(city: params[:city])
@@ -20,6 +20,29 @@ class PlacesController < ApplicationController
       render :new
     end
   end
+
+  def show
+  end
+
+  def destroy
+    @place.destroy
+    redirect_to places_path
+  end
+
+  def edit
+  end
+
+  def update
+    @place.update(place_params)
+
+    redirect_to place_path(@place)
+  end
+
+  def set_place
+    @place = Place.find(params[:id])
+  end
+
+
 
   private
 
