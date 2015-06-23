@@ -1,28 +1,23 @@
-<h1>My PLACES</h1>
 
 
-<% @places.each do |place| %>
-  <h2> <%= place.name %> </h2>
-  <p> city : <%= place.city %></p>
-  <p> address : <%= place.address %></p>
-  <p> capacity : <%= place.capacity %></p>
-  <p> number of rooms : <%= place.rooms %></p>
-  <p> description : <%= place.description%></p>
-  <p> price : <%= place.rate %></p>
-  <p> available <%= place.available %></p>
-  <%= image_tag place.picture %>
-
-
-  <%= link_to "Delete", profile_place_path(place),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-
-  <%= link_to "edit", edit_profile_place_path(place) %>
-  <%= link_to "show", profile_place_path(place) %>
-<% end %>
-
-
-
-<%= link_to "add a new place", new_profile_place_path %>
-
+<div class="container">
+  <div class="row text-center med-padded-bottom">
+    <h1>My PLACES <%= link_to "add a new place", new_profile_place_path, class: "btn btn-success" %></h1>
+    <% @places.each do |place| %>
+      <div class="col-sm-4">
+        <div class="card">
+        <h3> <%= place.name %> </h3>
+        <%= image_tag place.picture, class: "pic-index image" %>
+        <h4> price : <%= place.rate %></h4>
+        <p> city : <%= place.city %></p>
+        <p> available : <%= place.available %></p>
+        <%= link_to "Delete", profile_place_path(place),
+          method: :delete,
+          data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+        <%= link_to "show", profile_place_path(place), class: "btn btn-success" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 

@@ -2,21 +2,24 @@
 
 <%= render 'shared/small_navbar' %>
 
-<div id="content">
-  <h1>Here are your profile details</h1>
-
-  <div>
+<div class="container small-padded-top">
+  <h2 class= "text-center">Welcome <%= @user.first_name %></h2>
+  <div class="row med-padded-top med-padded-bottom">
+    <div class="col-xs-12 col-sm-6">
       <%= image_tag @user.picture.url(:medium), class: "img-circle" %>
-
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <h4 class= "med-padded-bottom">Here are your profile caracteristics </h4>
+      <p><b>First name : </b> <%= @user.first_name %></p>
+      <p><b>Last name : </b> <%= @user.last_name %> </p>
+      <p><b>Address : </b> <%= @user.address %> </p>
+      <p><b>Zipcode : </b> <%= @user.zipcode %> </p>
+      <p><b>City : </b> <%= @user.city %> </p>
+      <p><b>Email address : </b> <%= @user.email %> </p>
+      <p><b>Phone number : </b> <%= @user.phone_number %> </p>
+      <p><b>Sex : </b> <%= @user.sex %> </p>
+      <p><b>A few words about yourself : </b><%= @user.description %> </p>
+    </div>
   </div>
-
-  <p><b>First name</b> <%= @user.first_name %></p>
-  <p><b>Last name</b> <%= @user.last_name %> </p>
-  <p><b>Address</b> <%= @user.address %> </p>
-  <p><b>Zipcode</b> <%= @user.zipcode %> </p>
-  <p><b>City</b> <%= @user.city %> </p>
-  <p><b>Email address</b> <%= @user.email %> </p>
-  <p><b>Phone number</b> <%= @user.phone_number %> </p>
-  <p><b>Sex</b> <%= @user.sex %> </p>
-  <p><b>A few words about yourself </b><%= @user.description %> </p>
 </div>
+
