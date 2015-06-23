@@ -8,7 +8,15 @@
   <div class="container">
       <div class="row">
         <div class="col-sm-offset-3 col-xs-12">
-    <!-- ajouter le form ici  -->
+          <%= form_tag(places_path, method: "get") do %>
+            <%= label_tag('enter a city plz') %>
+            <%= text_field_tag(:city) %>
+            <%= label_tag('enter a number of rooms plz') %>
+            <%= text_field_tag(:rooms) %>
+            <%= label_tag('enter a number of beds plz') %>
+            <%= text_field_tag(:beds) %>
+            <%= submit_tag("Search") %>
+          <% end %>
         </div>
       </div>
     </div>
