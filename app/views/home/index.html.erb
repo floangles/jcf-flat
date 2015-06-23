@@ -12,9 +12,9 @@
             <%= label_tag('enter a city plz') %>
             <%= text_field_tag(:city) %>
             <%= label_tag('enter a number of rooms plz') %>
-            <%= text_field_tag(:rooms) %>
+            <%= number_field_tag :rooms,nil, min: 1, max: 10  %>
             <%= label_tag('enter a number of beds plz') %>
-            <%= text_field_tag(:beds) %>
+            <%= number_field_tag :beds,nil, min: 1, max: 10 %>
             <%= submit_tag("Search") %>
           <% end %>
         </div>
