@@ -7,15 +7,12 @@
   </div>
   <div class="container">
       <div class="row">
-        <div class="col-sm-offset-3 col-xs-12">
-          <%= form_tag(places_path, method: "get") do %>
-            <%= label_tag('enter a city plz') %>
-            <%= text_field_tag(:city) %>
-            <%= label_tag('enter a number of rooms plz') %>
-            <%= number_field_tag :rooms,nil, min: 1, max: 10  %>
-            <%= label_tag('enter a number of beds plz') %>
-            <%= number_field_tag :beds,nil, min: 1, max: 10 %>
-            <%= submit_tag("Search") %>
+        <div class=" col-xs-12">
+          <%= form_tag(places_path, method: "get", class: "nifty_form form-inline ") do %>
+            <%= text_field_tag(:city, nil, placeholder: 'city') %>
+            <%= number_field_tag :rooms, nil, placeholder: 'rooms', min: 1, max: 10  %>
+            <%= number_field_tag :beds,nil, placeholder: 'beds',min: 1, max: 10 %>
+            <%= submit_tag("allez hop !", class: "btn-danger") %>
           <% end %>
         </div>
       </div>
