@@ -10,6 +10,7 @@
   <p> description : <%= place.description%></p>
   <p> price : <%= place.rate %></p>
   <p> available <%= place.available %></p>
+  <%= image_tag place.picture %>
 
 
   <%= link_to "Delete", profile_place_path(place),
@@ -17,6 +18,7 @@
       data: { confirm: "Are you sure?" } %>
 
   <%= link_to "edit", edit_profile_place_path(place) %>
+  <%= link_to "show", profile_place_path(place) %>
 <% end %>
 
 

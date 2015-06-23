@@ -11,21 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150623141746) do
-=======
-
-
-ActiveRecord::Schema.define(version: 20150623141746) do
-
->>>>>>> master
+ActiveRecord::Schema.define(version: 20150623160953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "guests"
-    t.boolean  "approved"
     t.integer  "guest_rating"
     t.text     "guest_comment"
     t.integer  "host_rating"
@@ -34,10 +26,9 @@ ActiveRecord::Schema.define(version: 20150623141746) do
     t.integer  "place_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "status"
     t.date     "checkin"
     t.date     "checkout"
-
+    t.string   "status"
   end
 
   add_index "bookings", ["place_id"], name: "index_bookings_on_place_id", using: :btree
@@ -55,16 +46,13 @@ ActiveRecord::Schema.define(version: 20150623141746) do
     t.string   "type"
     t.integer  "rate"
     t.boolean  "available"
-
-    t.integer  "user_id"
-
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "user_id"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-
   end
 
   add_index "places", ["user_id"], name: "index_places_on_user_id", using: :btree

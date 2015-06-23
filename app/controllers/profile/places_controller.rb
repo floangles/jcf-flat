@@ -38,7 +38,12 @@ module Profile
 
     def update
       @place.update(place_params)
-      redirect_to profil_place_path(@place)
+
+      if @place.save
+      redirect_to profile_places_path
+      else
+        render :edit
+      end
     end
 
     def set_place
