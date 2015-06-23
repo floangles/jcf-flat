@@ -10,6 +10,7 @@
   <p> description : <%= place.description%></p>
   <p> price : <%= place.rate %></p>
   <p> available <%= place.available %></p>
+  <%= image_tag place.picture %>
 
 
   <%= link_to "Delete", profile_place_path(place),

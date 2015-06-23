@@ -3,7 +3,7 @@
       <h1>Add a new place</h1>
       <div class="col-xs-12 text-center">
         <div class="text-center">
-          <%= simple_form_for @place, url: profile_places_path, method: :post do |f| %>
+          <%= simple_form_for @place, url: url, method: :post do |f| %>
             <div class="text-center">
               <%= f.error_notification %>
               <%= f.input :type %>
