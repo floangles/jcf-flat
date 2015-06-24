@@ -1,8 +1,26 @@
 
 #footer {
   background-color: rgb(10,10,10);
-  color: $gray-lighter;
+  // color: $gray-lighter;
   font-family : "Open Sans";
-  font-size: 12px;
-  padding: 20px;
+  font-size: 20px;
+  // padding: 20px;
+  height: 200px;
+
+  padding: 80px 20px;
+  color: rgb(30,30,30);
+  background-color: #D2D7D3;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#text-align-right {
+  text-align: right;
+}
+
+.fa-footer {
+  line-height: 18px;
+  font-size: 35px;
+  margin-bottom: 40px;
+  color: rgb(30,30,30);
 }

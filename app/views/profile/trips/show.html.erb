@@ -1,0 +1,43 @@
+<div class="image_div text-center">
+</div>
+
+<div class="container med-padded-top med-padded-bottom">
+    <div class="row">
+      <div class="col-sm-6">
+        <h5> name :<%= @trip.place.name%></h5>
+        <h5> price :<%= @trip.place.rate%></h5>
+        <h5>address :<%= @trip.place.address%></h5>
+        <h5>zipcode :<%= @trip.place.zipcode%></h5>
+        <h5>city :<%= @trip.place.city%></h5>
+        <h5>description :<%= @trip.place.description%></h5>
+        <h5>capacity : <%= @trip.place.capacity%></h5>
+        <h5>rooms : <%= @trip.place.rooms%></h5>
+        <h5>beds :<%= @trip.place.beds%></h5>
+        <h5 class="med-padded-bottom">available :<%= @trip.place.available%></h5>
+        <%= link_to "Back to the list", profile_trips_path, class: "btn btn-primary" %>
+      </div>
+      <div class="col-sm-6">
+
+        <div class="card-trip text-center small-padded-top" >
+          <h3>Booking informations</h3>
+          <h5 class= "med-padded-top">Checkin : <%= @trip.checkin%></h5>
+          <h5>Checkout : <%= @trip.checkout%></h5>
+          <h5>Number of guests : <%= @trip.guests%></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<style media="screen">
+  .image_div { background-image: url(<%= @trip.place.picture %>);
+    position: relative;
+    padding: 300px 0;
+    background-size: cover;
+    background-position: center center;
+   }
+</style>
+
+
+

@@ -23,7 +23,9 @@ Rails.application.routes.draw do
 
   resources :places, only: [:index, :show]
 
-
+  namespace :profile do
+    resources :trips, only: [:index, :show, :destroy]
+  end
 
 
 
