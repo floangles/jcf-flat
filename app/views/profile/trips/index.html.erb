@@ -9,10 +9,10 @@
         <%= image_tag trip.place.picture, class: "pic-index image" %>
         <h4> price : <%= trip.place.rate %></h4>
         <p> city : <%= trip.place.city %></p>
-        <p> guests : <%= trip.guests %></p>
+        <p> Number of guests : <%= trip.guests %></p>
         <p> checkin : <%= trip.checkin %></p>
         <p> checkout : <%= trip.checkout %></p>
-        <%= link_to "Cancel my reservation", "#",
+        <%= link_to "Cancel my reservation", profile_trip_path(trip),
           method: :delete,
           data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
         <%= link_to "show", profile_trip_path(trip), class: "btn btn-success" %>
