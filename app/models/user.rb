@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [ :facebook ]
 
   has_many :bookings, dependent: :destroy
-  has_many :places
+  has_many :places, dependent: :destroy
+  has_many :rentings, through: :places, source: :bookings
 
   has_attached_file :picture,
     styles: { medium: "300x300>", thumb: "100x100>" },

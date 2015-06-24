@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row text-center med-padded-bottom">
+    <h1> History </h1>
+    <% @rentings.each do |renting| %>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="guest_info">
+            <h3>PLACE INFOS :</h3>
+            <%= image_tag renting.place.picture, class: "pic-index image img_places img-circle" %>
+            <div class="field_align">
+              <p>
+                <strong>Name</strong> : <%= renting.place.name %>
+              </p>
+              <p>
+                <strong>Adress</strong> : <%= renting.place.address %>
+                <%= renting.place.zipcode %> <%= renting.place.city %></p>
+               <p>
+                <strong>Checkin</strong> : <%= renting.checkin %>
+              </p>
+              <p>
+                <strong>Checkout</strong> : <%= renting.checkout %>
+              </p>
+            </div>
+          </div>
+          <div class="place_info">
+            <h3>GUEST INFOS :</h3>
+            <div class="field_align">
+              <%= image_tag renting.user.picture, class: "img-circle img_guest" %>
+              <p><strong>Name</strong> : <%= renting.user.first_name %>
+               <%= renting.user.last_name %> </p>
+              <p> <strong>email</strong> : <%= renting.user.email %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
