@@ -5,20 +5,28 @@
       <div class="col-sm-4">
         <div class="card">
           <div class="guest_info">
-            <h3>PLACE INFOS :</h3>
+            <h3>You got a request for:</h3>
             <%= image_tag renting.place.picture, class: "pic-index image img_places img-circle" %>
             <div class="field_align">
               <p>
-                <strong>Name</strong> : <%= renting.place.name %>
+                <b>Name</b> : <%= renting.place.name %>
               </p>
               <p>
-                <strong>Adress</strong> : <%= renting.place.address %>
+                <b>Adress</b> : <%= renting.place.address %>
                 <%= renting.place.zipcode %> <%= renting.place.city %></p>
                <p>
-                <strong>Checkin</strong> : <%= renting.checkin %>
+                <b>Checkin</b> : <%= renting.checkin %>
               </p>
               <p>
-                <strong>Checkout</strong> : <%= renting.checkout %>
+                <b>Checkout</b> : <%= renting.checkout %>
+              </p>
+              <p>
+              <% if renting.status %>
+                <b>Status</b>: <%= renting.status %>
+              <% else %>
+
+              <% end %>
+
               </p>
             </div>
           </div>
@@ -26,9 +34,9 @@
             <h3>GUEST INFOS :</h3>
             <div class="field_align">
               <%= image_tag renting.user.picture, class: "img-circle img_guest" %>
-              <p><strong>Name</strong> : <%= renting.user.first_name %>
+              <p><b>Name</b> : <%= renting.user.first_name %>
                <%= renting.user.last_name %> </p>
-              <p> <strong>email</strong> : <%= renting.user.email %></p>
+              <p> <b>email</b> : <%= renting.user.email %></p>
             </div>
           </div>
         </div>
