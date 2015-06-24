@@ -1,6 +1,6 @@
 
 <div class="image_div text-center">
-  <h1><%= @place.name %></h1>
+  <!-- <h1><%= @place.name %></h1> -->
     </div>
 </div>
 
@@ -8,30 +8,35 @@
   <div class="container med-padded-top med-padded-bottom">
     <div class="row">
       <div class="col-sm-6">
-
-        <h3><%= @place.name%></h3>
-        <h5> price :<%= @place.rate%></h5>
-        <h5>address :<%= @place.address%></h5>
-        <h5>zipcode :<%= @place.zipcode%></h5>
-        <h5>city :<%= @place.city%></h5>
-        <h5>description :<%= @place.description%></h5>
-        <h5>capacity : <%= @place.capacity%></h5>
-        <h5>rooms : <%= @place.rooms%></h5>
-        <h5>beds :<%= @place.beds%></h5>
-        <h5>available :<%= @place.available%></h5>
+        <div class="card">
+          <h3><%= @place.name%></h3>
+          <br>
+          <p><em>Rate per night</em>: <%= @place.rate%> euros</p>
+          <p><em>Address</em>: <%= @place.address%> - <%= @place.zipcode%> <%= @place.city%></p>
+          <p><%= @place.capacity%> <em>persons</em></p>
+          <p><%= @place.rooms%> <em>rooms</em></p>
+          <p><%= @place.beds%> <em>beds</em></p>
+          <p><em>Description<em>: <%= @place.description%></p>
+          <!-- <h5><b>Available<b> :<%= @place.available%></h5> -->
+          <br>
+          <p class="text-center"><%= link_to "Back to the list", profile_places_path, class: "btn btn-primary" %>
+          </p>
+        </div>
       </div>
-      <div class="col-sm-6">
 
-        <%= link_to "Back to the list", profile_places_path, class: "btn btn-primary" %>
-        <%= simple_form_for [@place, @booking] do |f| %>
-          <div class="text-center">
-            <%= f.error_notification %>
-            <%= f.input :guests %>
-            <%= f.input :checkin %>
-            <%= f.input :checkout %>
-            <%= f.button :submit %>
-          </div>
-        <% end %>
+
+      <div class="col-sm-6">
+        <div class="card text-align">
+          <%= simple_form_for [@place, @booking] do |f| %>
+            <div class="text-center booking-form">
+              <%= f.error_notification %>
+              <%= f.input :guests %>
+              <%= f.input :checkin, as: :date, html5: true %>
+              <%= f.input :checkout, as: :date, html5: true %>
+              <%= f.button :submit %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
@@ -47,9 +52,3 @@
     background-position: center center;
    }
 </style>
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> master
