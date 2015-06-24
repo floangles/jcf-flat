@@ -1,6 +1,13 @@
 <div class="container">
   <div class="row text-center med-padded-bottom">
-    <h1> History </h1>
+    <h2>My rentings</h2>
+    <% if @rentings.size == 0 %>
+      <p>You have no renting registered</p>
+      <br>
+      <br>
+      <br>
+      <p><%= link_to "Manage my places", profile_places_path, class: "btn btn-success" %></p>
+    <% end %>
     <% @rentings.each do |renting| %>
       <div class="col-sm-4">
         <div class="card">
