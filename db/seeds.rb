@@ -5,10 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Booking.destroy_all
+Place.destroy_all
 
 
 
-p = Place.new(name: "Grand appartement avec parquet, moulures et cheminée",
+p = Place.new(name: "Grand appartement",
           address: "15 avenue de la République",
           zipcode: 75011,
           city: "Paris",
@@ -133,7 +135,7 @@ a = Place.new(name: "A island in Paris",
           available: "true")
 a.save
 
-b = Place.new(name: "Appartement haussmannien au coeur du 9è",
+b = Place.new(name: "Appartement haussmannien",
           address: "40 rue des martyrs",
           zipcode: 75009,
           city: "Paris",

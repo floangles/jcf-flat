@@ -1,21 +1,50 @@
-<h1 class="title-style"> Choose a flat</h1>
 
-<% @places.each do |place| %>
-  <div class="Places available in #{place.city}">
-    <p><b><%= place.name%></b></p>
-    <p><%= place.city%></p>
-    <p> <%= place.rooms%> rooms</p>
-     <div>
-      <%= image_tag place.picture.url(:medium) %>
-    </div>
-      <%= link_to "See this place", place_path(place) %>
-    </p>
+<div id="map" style="width: 1800px; height: 500px;"></div>
 
+          <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+          <script type="text/javascript">
+          var myLatlng = new google.maps.LatLng(48.852737,2.364278);
+
+          var myOptions = {
+            zoom: 16,
+            center: myLatlng,
+            scrollwheel: true,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            styles: [] // TODO: replace [] by array from https://snazzymaps.com/
+          };
+
+          var map = new google.maps.Map(document.getElementById('map'), myOptions);
+          var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: "You are here!"
+          });
+          </script>
+
+
+
+<div class="container">
+  <div class="row text-center">
+    <% @places.each do |place| %>
+      <div class="col-sm-4">
+        <div class="card">
+          <p><b><%= place.name%></b></p>
+          <p><%= place.city%></p>
+          <p> <%= place.rooms%> rooms</p>
+          <p> <%= image_tag place.picture.url(:medium) %></p>
+          <p><%= link_to "See this place", place_path(place), class: "btn btn-primary" %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 
 
-<%= link_to "create a new appart", new_place_path %>
+
+
+
+
 
 
 
