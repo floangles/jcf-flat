@@ -1,13 +1,18 @@
-<div>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-</div>
+
 
  <div id="banner">
   <div>
-    <h1 id="home_title">Welcome on OurBnb</h1>
-    <!-- <h2 id="h2_home"><u>LE SITE DE LA LOC D'APPART</u></h2> -->
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</div>
+<div class="container">
+  <div class="row">
+    <div class= "col-xs-offset-3 col-xs-6 title_cool">
+      <h1 id="home_title">Welcome on OurBnb</h1>
+    </div>
   </div>
+</div>
+
   <div class="container">
       <div class="row">
         <div class=" col-xs-12">
@@ -38,7 +43,7 @@
         <div class="col-xs-12, col-sm-4 pics-padding-bottom">
         <%= link_to place_path(place) do %>
           <div class="text-center">
-            <%= image_tag place.picture.url(:medium) %>
+            <%= image_tag place.picture.url(:medium), class: "image2" %>
           </div>
           <br>
           <div>
@@ -57,11 +62,11 @@
   <h4 id="h4_featured">you'll be home every night</h4>
   <div class="container">
     <div class="row">
-      <% @places[0..2].each do |place| %>
+      <% @places[3..4].each do |place| %>
         <div class="col-xs-12, col-sm-4 pics-padding-bottom">
         <%= link_to place_path(place) do %>
           <div class="text-center">
-            <%= image_tag place.picture.url(:medium) %>
+            <%= image_tag place.picture.url(:medium), class: "image2" %>
           </div>
           <br>
           <div>
