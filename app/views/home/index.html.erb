@@ -1,46 +1,77 @@
- <div id="banner">
+<div>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+</div>
+
+ <div id="banner">
   <div>
-    <h1 id="home_title">BIENVENUE SUR JCF FLAT </h1>
-    <h2 id="h2_home"><u>LE SITE DE LA LOC D'APPART</u></h2>
+    <h1 id="home_title">Welcome on OurBnb</h1>
+    <!-- <h2 id="h2_home"><u>LE SITE DE LA LOC D'APPART</u></h2> -->
   </div>
   <div class="container">
       <div class="row">
         <div class=" col-xs-12">
           <%= form_tag(places_path, method: "get", class: "nifty_form form-inline ") do %>
-            <%= text_field_tag(:city, nil, placeholder: 'city') %>
-            <%= number_field_tag :rooms, nil, placeholder: 'rooms', min: 1, max: 10  %>
-            <%= number_field_tag :beds,nil, placeholder: 'beds',min: 1, max: 10 %>
-            <%= submit_tag("allez hop !", class: "btn-danger") %>
+            <%= text_field_tag(:city, nil, placeholder: 'Paris...') %>
+            <%= date_field(:booking, :checkin, placeholder: 'Checkin') %>
+            <%= date_field(:booking, :checkout, placeholder: 'Checkout') %>
+            <%= number_field_tag :booking, nil, placeholder: 'Guests', min: 1, max: 15  %>
+           <!--  <%= number_field_tag :beds,nil, placeholder: 'How many beds',min: 1, max: 10 %> -->
+            <%= submit_tag("Search", class: "btn-danger") %>
           <% end %>
         </div>
       </div>
     </div>
  </div>
-  <div id="featured">
-    <h2 id="h2_featured">Do you wanna travel ? </h2>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12, col-sm-3">
-          <%= image_tag("featured1.jpg", class: "featured_image") %>
-          <p class="text_featured">cool</p>
-        </div>
-        <div class="col-xs-12, col-sm-3">
-          <%= image_tag("featured2.jpg", class: "featured_image") %>
-          <p class="text_featured">cool</p>
-        </div>
-        <div class="col-xs-12, col-sm-3">
-            <%= image_tag("featured3.jpg", class: "featured_image")%>
-            <p class="text_featured">cool</p>
-        </div>
-        <div class="col-xs-12, col-sm-3">
-            <%= image_tag("featured4.jpg", class: "featured_image") %>
-            <p class="text_featured">cool</p>
-        </div>
-      </div>
-    </div>
+
+
+<div>
+
 </div>
 
+<div id="featured">
+  <h2 id="h2_featured">Find a place like home</h2>
+  <h4 id="h4_featured">wherever you want to go</h4>
+  <div class="container">
+    <div class="row">
+      <% @places[0..2].each do |place| %>
+        <div class="col-xs-12, col-sm-4 pics-padding-bottom">
+        <%= link_to place_path(place) do %>
+          <div class="text-center">
+            <%= image_tag place.picture.url(:medium) %>
+          </div>
+          <br>
+          <div>
+            <p class="text-center"><%= place.name%></p>
+          </div>
 
+        </div>
+        <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="featured">
+  <h2 id="h2_featured">Travel the world</h2>
+  <h4 id="h4_featured">you'll be home every night</h4>
+  <div class="container">
+    <div class="row">
+      <% @places[0..2].each do |place| %>
+        <div class="col-xs-12, col-sm-4 pics-padding-bottom">
+        <%= link_to place_path(place) do %>
+          <div class="text-center">
+            <%= image_tag place.picture.url(:medium) %>
+          </div>
+          <br>
+          <div>
+            <p class="text-center"><%= place.name%></p>
+          </div>
+
+        </div>
+        <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>
 
