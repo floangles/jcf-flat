@@ -1,1 +1,46 @@
-<h1>il est cool le show</h1>
+<div class="image_div text-center">
+  <h1><%= @place.name %></h1>
+    </div>
+</div>
+
+  <div class="container med-padded-top med-padded-bottom">
+    <div class="row">
+      <div class="col-sm-6">
+        <h5> name :<%= @place.name%></h5>
+        <h5> price :<%= @place.rate%></h5>
+        <h5>address :<%= @place.address%></h5>
+        <h5>zipcode :<%= @place.zipcode%></h5>
+        <h5>city :<%= @place.city%></h5>
+        <h5>description :<%= @place.description%></h5>
+        <h5>capacity : <%= @place.capacity%></h5>
+        <h5>rooms : <%= @place.rooms%></h5>
+        <h5>beds :<%= @place.beds%></h5>
+        <h5>available :<%= @place.available%></h5>
+      </div>
+      <div class="col-sm-6">
+        <%= link_to "Back to home", root_path, class: "btn btn-primary" %>
+
+        <%= simple_form_for [@place, @booking] do |f| %>
+          <div class="text-center">
+            <%= f.error_notification %>
+            <%= f.input :guests %>
+            <%= f.input :checkin %>
+            <%= f.input :checkout %>
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<style media="screen">
+  .image_div { background-image: url(<%= @place.picture %>);
+    position: relative;
+    padding: 300px 0;
+    background-size: cover;
+    background-position: center center;
+   }
+</style>
