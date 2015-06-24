@@ -48,11 +48,11 @@ ActiveRecord::Schema.define(version: 20150623160953) do
     t.boolean  "available"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.integer  "user_id"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.integer  "user_id"
   end
 
   add_index "places", ["user_id"], name: "index_places_on_user_id", using: :btree
