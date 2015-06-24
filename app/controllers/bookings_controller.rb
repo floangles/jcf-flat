@@ -2,6 +2,8 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update]
   before_action :authenticate_user!
 
+
+
   def new
     # @user = User.find(params[:user_id])
     @place = Place.find(params[:place_id])

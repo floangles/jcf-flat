@@ -3,57 +3,31 @@ module Profile
     layout 'profile'
 
     before_action :authenticate_user!
-    before_action :set_place, only: [:show, :destroy, :edit, :update]
+    before_action :set_trip, only: [:show, :destroy]
 
 
     def index
-      @places = current_user.places
+      @trips = current_user.bookings
     end
 
-    def new
-      @place = Place.new
-    end
-
-    def create
-      @place = current_user.places.new(place_params)
-      @place.save
-
-      if @place.save
-        redirect_to profile_places_path
-      else
-        render :new
-      end
-    end
 
     def show
     end
 
     def destroy
-      @place.destroy
-      redirect_to profile_places_path
+      @trip.destroy
+      redirect_to profile_trips_path
     end
 
-    def edit
-    end
 
-    def update
-      @place.update(place_params)
-
-      if @place.save
-      redirect_to profile_places_path
-      else
-        render :edit
-      end
-    end
-
-    def set_place
-    @place = current_user.places.find(params[:id])
+    def set_trip
+    @trip = current_user.bookings.find(params[:id])
     end
 
     private
 
-    def place_params
-      params.require(:place).permit(:name, :address, :zipcode, :city, :capacity, :rooms, :beds, :description, :rate, :available, :picture)
+    def trip_params
+      params.require(:trip).permit(:name, :address, :zipcode, :city, :capacity, :rooms, :beds, :description, :rate, :available, :picture)
     end
 
   end
