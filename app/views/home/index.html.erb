@@ -1,33 +1,18 @@
-
-
- <div id="banner">
-  <div>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-</div>
-<div class="container">
-  <div class="row">
-    <div class= "col-xs-offset-3 col-xs-6 title_cool">
-      <h1 id="home_title">Welcome on OurBnb</h1>
-    </div>
-  </div>
-</div>
-
-  <div class="container">
-      <div class="row">
-        <div class="form-inline">
-          <%= form_tag(places_path, method: "get", class: "") do %>
-              <%= text_field_tag(:city, nil, placeholder: 'Look for a city', class: 'form-control') %>
-            <%= date_field(:booking, :checkin, placeholder: 'Checkin', class: 'form-control', id: 'date-btn') %>
-            <%= date_field(:booking, :checkout, placeholder: 'Checkout', class: 'form-control', id: 'date-btn') %>
-            <%= number_field_tag :booking, nil, placeholder: '2 guests', min: 1, max: 15, class: 'form-control', id: 'guest-btn' %>
-           <!--  <%= number_field_tag :beds,nil, placeholder: 'How many beds',min: 1, max: 10 %> -->
-            <%= submit_tag("Search", class: "btn-danger btn-large btn form-control", id: 'submit-btn') %>
-          <% end %>
+<div class="homepage-hero-module">
+    <div class="video-container">
+        <div class="filter"></div>
+        <video autoplay loop class="fillWidth">
+            <source src="assets/images/dolores.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="../assets/images/dolores.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="../assets/images/dolores.ogv" type="video/ogv" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+        <div class="poster hidden">
+            <img src="../assets/images/dolores.jpg" alt="">
         </div>
-      </div>
     </div>
- </div>
+</div>
+
+
 
 
 <div>
