@@ -32,7 +32,7 @@
           <p><b><%= place.name%></b></p>
           <p><%= place.city%></p>
           <p> <%= place.rooms%> rooms</p>
-          <p> <%= image_tag place.picture.url(:medium) %></p>
+          <p> <%= image_tag place.picture.url(:medium), class: "image2" %></p>
           <p><%= link_to "See this place", place_path(place), class: "btn btn-primary" %></p>
         </div>
       </div>
