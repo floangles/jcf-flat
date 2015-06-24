@@ -1,8 +1,14 @@
 
+<div class="image_div text-center">
+  <h1><%= @place.name %></h1>
+    </div>
+</div>
+
 
   <div class="container med-padded-top med-padded-bottom">
     <div class="row">
       <div class="col-sm-6">
+
         <h3><%= @place.name%></h3>
         <h5> price :<%= @place.rate%></h5>
         <h5>address :<%= @place.address%></h5>
@@ -15,8 +21,17 @@
         <h5>available :<%= @place.available%></h5>
       </div>
       <div class="col-sm-6">
-        <%= link_to "Edit your place", edit_profile_place_path(@place), class: "btn btn-success" %>
+
         <%= link_to "Back to the list", profile_places_path, class: "btn btn-primary" %>
+        <%= simple_form_for [@place, @booking] do |f| %>
+          <div class="text-center">
+            <%= f.error_notification %>
+            <%= f.input :guests %>
+            <%= f.input :checkin %>
+            <%= f.input :checkout %>
+            <%= f.button :submit %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -32,6 +47,9 @@
     background-position: center center;
    }
 </style>
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> master
