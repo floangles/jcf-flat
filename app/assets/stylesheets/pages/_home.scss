@@ -1,8 +1,9 @@
 #banner {
 background-image:url(bg_home.jpg);
 background-size: cover;
-padding-top: 250px;
-padding-bottom: 350px;
+padding-top: 550px;
+padding-bottom: 50px;
+// margin-bottom: 50px;
 font-size: 50px;
 text-align: center;
 margin-top: 0px;
@@ -14,7 +15,7 @@ margin-top: 0px;
 
 #home_title {
   font-size: 50px;
-  color: white;
+  color: $black;
  }
 
 #h2_home {
@@ -23,7 +24,7 @@ margin-top: 0px;
 
 }
 #featured {
-  margin: 100px;
+  margin: 50px;
 }
 
 .featured_image {
@@ -33,12 +34,23 @@ margin-top: 0px;
 
 .text_featured {
   color: $gray-dark;
-  font-size:50px;
+  font-size:15px;
   text-align: center;
 
 }
 
 #h2_featured {
   text-align: center;
+  // margin-bottom: 50px;
+  font-family: $header-font;
+}
+
+#h4_featured {
+  text-align: center;
   margin-bottom: 50px;
+  font-family: $header-font;
+}
+
+.pics-padding-bottom {
+  padding: 20px;
 }
