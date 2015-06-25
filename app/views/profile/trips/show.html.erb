@@ -2,30 +2,54 @@
 </div>
 
 <div class="container med-padded-top med-padded-bottom">
-    <div class="row">
-      <div class="col-sm-6">
-        <h3 class=""><%= @trip.place.name%></h3>
+  <div class="row">
+    <div class="col-sm-6">
+      <h3 class=""><%= @trip.place.name%></h3>
+      <br>
+      <p><b>Rate: </b><%= @trip.place.rate%> euros</p>
+      <p><b>Address in <%= @trip.place.city%></b>: <%= @trip.place.address%> <%= @trip.place.zipcode%></p>
+      <p><b>Description: </b><%= @trip.place.description%></p>
+      <p>Up to <%= @trip.place.capacity%> <b>guests</b></p>
+      <p><%= @trip.place.rooms%> <b>rooms</b></p>
+      <p><%= @trip.place.beds%> <b>beds</b></p>
+      <!-- <p class="med-padded-bottom">available :<%= @trip.place.available%></p> -->
+      <%= link_to "Back to the list", profile_trips_path, class: "btn btn-primary" %>
+    </div>
+    <div class="col-sm-6">
+      <div class=" text-center" >
+        <h3>Booking informations</h3>
         <br>
-        <p><b>Rate: </b><%= @trip.place.rate%> euros</p>
-        <p><b>Address in <%= @trip.place.city%></b>: <%= @trip.place.address%> <%= @trip.place.zipcode%></p>
-        <p><b>Description: </b><%= @trip.place.description%></p>
-        <p>Up to <%= @trip.place.capacity%> <b>guests</b></p>
-        <p><%= @trip.place.rooms%> <b>rooms</b></p>
-        <p><%= @trip.place.beds%> <b>beds</b></p>
-        <!-- <p class="med-padded-bottom">available :<%= @trip.place.available%></p> -->
-        <%= link_to "Back to the list", profile_trips_path, class: "btn btn-primary" %>
+        <h5 class= "">From : <%= @trip.checkin.httpdate.first(16)%></h5>
+        <h5>To: <%= @trip.checkout.httpdate.first(16) %></h5>
+        <h5>Number of guests : <%= @trip.guests%></h5>
+        <br>
+        <h5>Your host is: <%= @trip.user.first_name %> <%= @trip.user.last_name.upcase %></h5>
+        <p><%= image_tag @trip.user.picture.url(:thumb), class: "img-circle" %></p>
       </div>
-      <div class="col-sm-6">
-        <div class=" text-center" >
-          <h3>Booking informations</h3>
-          <br>
-          <h5 class= "">From : <%= @trip.checkin.httpdate.first(16)%></h5>
-          <h5>To: <%= @trip.checkout.httpdate.first(16) %></h5>
-          <h5>Number of guests : <%= @trip.guests%></h5>
-          <br>
-          <h5>Your host is: <%= @trip.user.first_name %> <%= @trip.user.last_name.upcase %></h5>
-          <p><%= image_tag @trip.user.picture.url(:thumb), class: "img-circle" %></p>
-        </div>
+    </div>
+    <div class="col-sm-6">
+      <% if Time.now.to_i > (Time.parse(@trip.checkout.to_s).to_i) && @trip.guest_comment.nil? %>
+
+      <!-- && @trip.status == "Approved" -->
+
+        <%= simple_form_for @trip do |f| %>
+          <div class="labels-form">
+            <%= f.error_notification %>
+            <%= f.input :guest_comment, input_html: {value: ""}, label: 'Leave a comment about this place' %>
+            <%= f.input :guest_rating, input_html: {value: ""}, label: 'Give a rating between 1 and 5' %>
+            <%= f.submit 'Post your feedback' %>
+            <% end %>
+          </div>
+        <% elsif @trip.guest_comment %>
+          <% if @trip.guest_comment %>
+            <b>Your feedback for this place</b>
+            <br>
+            <i class="fa fa-quote-left"></i> <em><%= @trip.guest_comment %></em>
+            <br>
+            <b>Your guest's rating:</b>
+            <br><%= @trip.guest_rating %> <i class="fa fa-star-o"></i>
+          <% end %>
+      <% end %>
       </div>
     </div>
   </div>

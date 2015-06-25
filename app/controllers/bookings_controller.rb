@@ -22,10 +22,29 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    # if params[:booking] != {}
+    if params[:booking][:host_comment] != nil
+      @booking = Booking.find(params[:id])
+      @booking.update(booking_comments_params)
+      redirect_to profile_rentings_path
+    elsif params[:booking][:guest_comment] != nil
+      @booking = Booking.find(params[:id])
+      @booking.update(booking_comments_params)
+      redirect_to profile_trip_path(@booking)
+
+    end
+  end
+
   private
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+
+  def booking_comments_params
+    params.require(:booking).permit(:host_comment, :host_rating, :guest_comment, :guest_rating)
   end
 
   def booking_params
