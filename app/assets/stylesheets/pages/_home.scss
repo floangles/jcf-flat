@@ -1,4 +1,5 @@
 #banner {
+position: relative;
 background-image:asset-url('bg_home.jpg');
 background-size: cover;
 padding-top: 550px;
@@ -69,5 +70,10 @@ margin-top: 0px;
 }
 #submit-btn {
   width: 150px;
+}
+
+.position-home {
+  position:absolute;
+  bottom: 200px;
 }
 
