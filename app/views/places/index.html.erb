@@ -1,27 +1,18 @@
 
-<div id="map" style="width: 1800px; height: 500px;"></div>
+<div id="map" style="width: 100%; height: 300px;"></div>
 
-          <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-
-          <script type="text/javascript">
-          var myLatlng = new google.maps.LatLng(48.852737,2.364278);
-
-          var myOptions = {
-            zoom: 16,
-            center: myLatlng,
-            scrollwheel: true,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            styles: [] // TODO: replace [] by array from https://snazzymaps.com/
-          };
-
-          var map = new google.maps.Map(document.getElementById('map'), myOptions);
-          var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            title: "You are here!"
-          });
-          </script>
-
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+      handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function(){
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+    })
+  <% end %>
+<% end %>
 
 
 <div class="container">
@@ -39,6 +30,7 @@
     <% end %>
   </div>
 </div>
+
 
 
 
