@@ -7,4 +7,5 @@ class Booking < ActiveRecord::Base
   validates :place, presence: true
   validates :checkin, presence: true
   validates :checkout, presence: true
+  validates :status, inclusion: { in: ["Approved", "Refused"], allow_nil: true }
 end

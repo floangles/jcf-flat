@@ -7,18 +7,24 @@
       <br>
       <br>
       <br>
-    <% end %>
     <p><%= link_to "Search for new places", root_path, class: "btn btn-success" %></p>
+    <% end %>
     <% @trips.each do |trip| %>
       <div class="col-sm-4">
         <div class="card">
         <h3> <%= trip.place.name %> </h3>
         <%= image_tag trip.place.picture, class: "pic-index image" %>
-        <h4> price : <%= trip.place.rate %></h4>
-        <p> city : <%= trip.place.city %></p>
-        <p> Number of guests : <%= trip.guests %></p>
-        <p> checkin : <%= trip.checkin %></p>
-        <p> checkout : <%= trip.checkout %></p>
+        <h4> Rate: <%= trip.place.rate %></h4>
+        <p> City: <%= trip.place.city %></p>
+        <p> <%= trip.guests %> guests</p>
+        <p> Checkin: <%= trip.checkin %></p>
+        <p> Checkout: <%= trip.checkout %></p>
+        <% if trip.status %>
+          <p> Status: <%= trip.status %></p>
+        <% else %>
+          <p> Status: pending</p>
+        <% end %>
+
         <%= link_to "Cancel my reservation", profile_trip_path(trip),
           method: :delete,
           data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>

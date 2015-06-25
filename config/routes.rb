@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :places do
     resources :bookings, only: [:new, :create]
   end
+  resources :bookings, only: [:update]
+
 
   resource  :user, only: [:show, :edit, :update]
 

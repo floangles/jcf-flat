@@ -1,3 +1,5 @@
+
+
 <div class="container">
   <div class="row text-center med-padded-bottom">
     <h2>My rentings</h2>
@@ -11,32 +13,37 @@
     <% @rentings.each do |renting| %>
       <div class="col-sm-4">
         <div class="card">
-          <div class="guest_info">
-            <h3>PLACE INFOS :</h3>
-            <%= image_tag renting.place.picture, class: "pic-index image img_places img-circle" %>
-            <div class="field_align">
-              <p>
-                <strong>Name</strong> : <%= renting.place.name %>
-              </p>
-              <p>
-                <strong>Adress</strong> : <%= renting.place.address %>
+          <!-- <div class="guest_info"> -->
+            <h3>You got a request from:</h3>
+            <h5><%= renting.user.first_name %> <%= renting.user.last_name %></h5>
+            <div><%= image_tag renting.user.picture.url, class: "img-circle img_guest align-center" %></div>
+            <br>
+
+              <div>
+                <h3>This request concerns</h3>
+                <h5><%= renting.place.name %></h5>
+                <p>
+                <b>Adress</b> : <%= renting.place.address %>
                 <%= renting.place.zipcode %> <%= renting.place.city %></p>
-               <p>
-                <strong>Checkin</strong> : <%= renting.checkin %>
-              </p>
-              <p>
-                <strong>Checkout</strong> : <%= renting.checkout %>
-              </p>
-            </div>
-          </div>
-          <div class="place_info">
-            <h3>GUEST INFOS :</h3>
-            <div class="field_align">
-              <%= image_tag renting.user.picture, class: "img-circle img_guest" %>
-              <p><strong>Name</strong> : <%= renting.user.first_name %>
-               <%= renting.user.last_name %> </p>
-              <p> <strong>email</strong> : <%= renting.user.email %></p>
-            </div>
+                <p>
+                <b>Checkin</b> : <%= renting.checkin %>
+                </p>
+                <p>
+                <b>Checkout</b> : <%= renting.checkout %>
+                </p>
+              <p>For your place</p>
+              <%= image_tag renting.place.picture(:thumb), class: "pic-index image img_places img-circle align-center" %>
+              </div>
+              <% if renting.status %>
+                <h4>Status: <%= renting.status %></h4>
+              <% else %>
+                <div class="">
+                <%= button_to "Approve", { action: :update, id: renting.id }, params: { status: "Approved" }, method: :patch, class: "btn btn-success form-control btn-approve" %>
+                or
+                <%= button_to "Refuse", { action: :update, id: renting.id }, params: { status: "Refused" }, method: :patch, class: "btn btn-danger form-control btn-approve" %>
+                </div>
+              <% end %>
+
           </div>
         </div>
       </div>
