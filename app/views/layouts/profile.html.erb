@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>JcfFlat</title>
-  <%= stylesheet_link_tag 'application', media: 'all'%>
+  <%= stylesheet_link_tag'application', media:'all'%>
 
   <%= csrf_meta_tags %>
 
@@ -21,11 +21,11 @@
 
 <%= render 'shared/footer' %>
 
-<%= javascript_include_tag
-        "https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyDm8_IClhmaIFC7R4m-tFpoQv9T0XbEi8I" %>
+<%= javascript_include_tag "https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBJpS15Ww-JheoyzoeSR5BUiRCs6-2SMq8" %>
+
 <%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
 
-<%= javascript_include_tag 'application' %>
+<%= javascript_include_tag'application' %>
 
 <%= yield(:after_js) %>
 
