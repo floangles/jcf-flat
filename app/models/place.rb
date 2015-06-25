@@ -10,6 +10,13 @@ class Place < ActiveRecord::Base
   content_type: /\Aimage\/.*\z/
 
 
+  geocoded_by :full_address
+  after_validation :geocode, if: ->(place) { place.address_changed? || place.city_changed? || place.zipcode_changed? }
+
+  def full_address
+    "#{address}, #{zipcode}, #{city}"
+  end
+
   validates :name, presence: true
   validates :address, presence: true
   validates :zipcode, presence: true

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
@@ -32,9 +32,15 @@ gem 'figaro'
 
 gem 'devise'
 
+gem "gmaps4rails"
+
+gem "rails-assets-underscore"
+
 gem 'aws-sdk', '< 2.0'
 
 gem 'paperclip'
+
+gem "geocoder"
 
 gem 'fog'
 
