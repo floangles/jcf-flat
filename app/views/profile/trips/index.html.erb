@@ -19,12 +19,19 @@
         <p> <%= trip.guests %> guests</p>
         <p> Checkin: <%= trip.checkin %></p>
         <p> Checkout: <%= trip.checkout %></p>
-        <% if trip.status %>
-          <p> Status: <%= trip.status %></p>
-        <% else %>
-          <p> Status: pending</p>
-        <% end %>
 
+
+        <% if Time.now.to_i < (Time.parse(trip.checkin.to_s).to_i) %>
+          <% if trip.status %>
+            <h4>Status: <%= trip.status %></h4>
+          <% else %>
+            <h4>Status: Pending</h4>
+          <% end %>
+
+
+
+
+        <% end %>
         <%= link_to "Cancel my reservation", profile_trip_path(trip),
           method: :delete,
           data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
