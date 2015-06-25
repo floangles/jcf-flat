@@ -7,8 +7,8 @@
       <br>
       <br>
       <br>
-    <% end %>
     <p><%= link_to "Search for new places", root_path, class: "btn btn-success" %></p>
+    <% end %>
     <% @trips.each do |trip| %>
       <div class="col-sm-4">
         <div class="card">
@@ -16,7 +16,7 @@
         <%= image_tag trip.place.picture, class: "pic-index image" %>
         <h4> Rate: <%= trip.place.rate %></h4>
         <p> City: <%= trip.place.city %></p>
-        <p> Number of guests: <%= trip.guests %></p>
+        <p> <%= trip.guests %> guests</p>
         <p> Checkin: <%= trip.checkin %></p>
         <p> Checkout: <%= trip.checkout %></p>
         <% if trip.status %>
