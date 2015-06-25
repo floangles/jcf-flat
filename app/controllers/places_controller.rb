@@ -13,6 +13,8 @@ class PlacesController < ApplicationController
 
     @booking = Booking.new
     @place = Place.find(params[:id])
+    @alert_message = "You are viewing #{@place.name}"
+    @place_coordinates = { lat: @flat.lat, lng: @flat.lng }
 
   end
 

@@ -36,6 +36,8 @@ gem 'aws-sdk', '< 2.0'
 
 gem 'paperclip'
 
+gem "geocoder"
+
 gem 'fog'
 
 gem 'rails_12factor', group: :production
