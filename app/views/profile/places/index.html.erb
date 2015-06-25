@@ -2,7 +2,14 @@
 
 <div class="container">
   <div class="row text-center med-padded-bottom">
-    <h1>My PLACES <%= link_to "add a new place", new_profile_place_path, class: "btn btn-success" %></h1>
+    <h2>My places</h2>
+    <% if @places.size == 0 %>
+      <p>You have no place registered</p>
+      <br>
+      <br>
+      <br>
+    <% end %>
+
     <% @places.each do |place| %>
       <div class="col-sm-4">
         <div class="card">
@@ -18,6 +25,11 @@
         </div>
       </div>
     <% end %>
+
+  </div>
+  <div class="text-center">
+    <p><%= link_to "Add a new place", new_profile_place_path, class: "btn btn-success" %></p>
+    <br>
   </div>
 </div>
 

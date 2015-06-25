@@ -1,30 +1,34 @@
 <%= render 'shared/small_navbar' %>
 
-<div id="content">
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <h1> My profile </h1>
+<div class="user-padded">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-xs-offset-4 col-xs-4 text-center">
+        <div>
+          <%= simple_form_for(@user, url: user_path, html: { multipart: true }) do |f| %>
+            <div class="labels-form">
+              <%= f.error_notification %>
 
-      <%= simple_form_for(@user, url: user_path, html: { multipart: true }) do |f| %>
-        <%= f.error_notification %>
+              <%= f.input :first_name %>
+              <%= f.input :last_name %>
+              <%= f.input :address %>
+              <%= f.input :zipcode %>
+              <%= f.input :city %>
+              <%= f.input :email %>
+              <%= f.input :phone_number %>
+              <%= f.input :sex %>
+              <%= f.input :description %>
 
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :address %>
-        <%= f.input :zipcode %>
-        <%= f.input :city %>
-        <%= f.input :email %>
-        <%= f.input :phone_number %>
-        <%= f.input :sex %>
-        <%= f.input :description %>
+              <p>
+                <%= f.label :picture %>
+                <%= f.file_field :picture %>
+              </p>
 
-        <p>
-          <%= f.label :picture %>
-          <%= f.file_field :picture %>
-        </p>
-
-        <%= f.button :submit, "Save my profile" %>
-      <% end %>
+              <%= f.button :submit, "Save my profile" %>
+            <% end %>
+            </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

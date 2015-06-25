@@ -2,25 +2,36 @@
 #footer {
   background-color: rgb(10,10,10);
   // color: $gray-lighter;
+  background-image:asset-url('footer.jpg');
+  opacity: 0,6;
+  background-size: cover;
   font-family : "Open Sans";
-  font-size: 20px;
+  font-size: 15px;
   // padding: 20px;
-  height: 200px;
+  height: 400px;
 
-  padding: 80px 20px;
-  color: rgb(30,30,30);
+  padding: 100px 20px;
+  color: $white;
   background-color: #D2D7D3;
   margin-left: 0px;
   margin-right: 0px;
+
+  .fa-footer {
+  line-height: 18px;
+  font-size: 45px;
+  margin-bottom: 40px;
+  padding-right: 20px;
+  color: rgb(30,30,30);
+  color: $white;
+  &:hover {
+    color: $red;
+  }
+  }
 }
 
 #text-align-right {
   text-align: right;
 }
-
-.fa-footer {
-  line-height: 18px;
-  font-size: 35px;
-  margin-bottom: 40px;
-  color: rgb(30,30,30);
+.row-padded {
+  padding-top: 120px;
 }
