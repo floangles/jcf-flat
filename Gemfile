@@ -43,12 +43,13 @@ gem 'rails_12factor', group: :production
 
 gem 'puma',           group: :production
 
-
 gem 'omniauth-facebook'
+
+gem "letter_opener", group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'actionmailer', '~> 4.2.2'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
