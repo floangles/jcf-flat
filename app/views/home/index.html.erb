@@ -37,7 +37,7 @@
   <h4 id="h4_featured">wherever you want to go</h4>
   <div class="container">
     <div class="row">
-      <% @places[0..2].each do |place| %>
+      <% @places.each do |place| %>
         <div class="col-xs-12, col-sm-4 pics-padding-bottom">
         <%= link_to place_path(place) do %>
           <div class="text-center">
@@ -58,7 +58,7 @@
   <h4 id="h4_featured">you'll be home every night</h4>
   <div class="container">
     <div class="row">
-      <% @places[3..4].each do |place| %>
+      <% @places.each do |place| %>
         <div class="col-xs-12, col-sm-4 pics-padding-bottom">
         <%= link_to place_path(place) do %>
           <div class="card text-center">

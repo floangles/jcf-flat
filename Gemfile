@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'  # Add this at line 2
-
-
+source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
