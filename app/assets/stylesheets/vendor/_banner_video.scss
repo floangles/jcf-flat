@@ -2,6 +2,7 @@
     border-right: none;
     border-left: none;
     position: relative;
+    height: 610px;
 }
 .no-video .video-container video,
 .touch .video-container video {
@@ -28,7 +29,17 @@
 .video-container .filter {
     z-index: 100;
     position: absolute;
+    bottom: 100px;
     background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+
+.video-container .filter2 {
+  color: white;
+    z-index: 100;
+    position: absolute;
+    top: 15px;
+    background: rgba(0, 0, 0, 0);
     width: 100%;
 }
 .video-container video {
