@@ -19,6 +19,7 @@ module Profile
       @place.save
 
       if @place.save
+        UserMailer.creation_confirmation(@user).deliver_now
         redirect_to profile_places_path
       else
         render :new
