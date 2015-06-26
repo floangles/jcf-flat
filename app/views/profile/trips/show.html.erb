@@ -23,8 +23,8 @@
         <h5>To: <%= @trip.checkout.httpdate.first(16) %></h5>
         <h5>Number of guests : <%= @trip.guests%></h5>
         <br>
-        <h5>Your host is: <%= @trip.user.first_name %> <%= @trip.user.last_name.upcase %></h5>
-        <p><%= image_tag @trip.user.picture.url(:thumb), class: "img-circle" %></p>
+        <h5>Your host is: <%= @trip.place.user.first_name %> <%= @trip.place.user.last_name %></h5>
+        <p><%= image_tag @trip.place.user.picture.url(:thumb), class: "img-circle" %></p>
       </div>
     </div>
     <div class="col-sm-6">

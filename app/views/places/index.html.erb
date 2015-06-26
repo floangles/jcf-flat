@@ -23,11 +23,13 @@
           <p><b><%= place.name%></b></p>
           <p><%= place.city%></p>
           <p> <%= place.rooms%> rooms</p>
-          <div>
-          <p> <%= image_tag place.picture.url(:medium), class: "image2" %>
-          </p>
+          <div class="relative">
+          <%= image_tag place.picture.url(:medium), class: "image2" %>
+          <p> <%= image_tag place.user.picture.url(:medium), class: "img-circle img-position" %>
+            <p class='position-price3'><%= place.rate %> €</p>
           </div>
           <p><%= link_to "See this place", place_path(place), class: "btn btn-primary" %></p>
+
         </div>
       </div>
     <% end %>

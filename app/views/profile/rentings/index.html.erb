@@ -14,78 +14,74 @@
       <div class="col-sm-4">
         <div class="card">
           <!-- <div class="guest_info"> -->
-            <h3>You got a request from:</h3>
-            <h5><%= renting.user.first_name %> <%= renting.user.last_name %></h5>
-            <% renting.user.bookings.each do |b| %>
-              <% if b.host_comment != nil && b.host_rating != nil %>
-                <b>Feedbacks from previous hosts</b>
-                <br>
-                <i class="fa fa-quote-left"></i> <em><%= b.host_comment %></em>
-                <br>
-                <b>Your guest's rating:</b>
-                <br><%= b.host_rating %> <i class="fa fa-star-o"></i>
-
-              <% end %>
+          <h3>You got a request from:</h3>
+          <h5><%= renting.user.first_name %> <%= renting.user.last_name %></h5>
+          <% renting.user.bookings.each do |b| %>
+            <% if b.host_comment != nil && b.host_rating != nil %>
+              <b>Feedbacks from previous hosts</b>
+              <br>
+              <i class="fa fa-quote-left"></i> <em><%= b.host_comment %></em>
+              <br>
+              <b>Your guest's rating:</b>
+              <br><%= b.host_rating %> <i class="fa fa-star-o"></i>
             <% end %>
-            <div><%= image_tag renting.user.picture.url, class: "img-circle img_guest align-center" %></div>
+          <% end %>
+          <div>
+            <%= image_tag renting.user.picture.url, class: "img-circle img_guest align-center" %>
+          </div>
             <br>
-
-              <div>
-                <h3>This request concerns</h3>
-                <h5><%= renting.place.name %></h5>
-                <p>
-                <b>Adress</b> : <%= renting.place.address %>
-                <%= renting.place.zipcode %> <%= renting.place.city %></p>
-                <p>
-                <b>Checkin</b> : <%= renting.checkin.httpdate.first(16) %>
-                </p>
-                <p>
-                <b>Checkout</b> : <%= renting.checkout.httpdate.first(16) %>
-                </p>
-                <br>
-                <% if renting.guest_comment %>
-                  <b>Your guest's feedback</b>
-                  <br>
-                  <i class="fa fa-quote-left"></i> <em><%= renting.guest_comment %></em>
-                  <br>
-                  <b>Your guest's rating:</b>
-                  <br><%= renting.guest_rating %> <i class="fa fa-star-o"></i>
-                <% end %>
-
-           <!--    <%= image_tag renting.place.picture(:thumb), class: "pic-index image img_places img-circle align-center" %> -->
-              </div>
-              <% if Time.now.to_i < (Time.parse(renting.checkin.to_s).to_i) %>
-                <% if renting.status %>
-                  <h4>Status: <%= renting.status %></h4>
+          <div>
+            <h3>This request concerns</h3>
+            <h5><%= renting.place.name %></h5>
+            <p>
+            <b>Adress</b> : <%= renting.place.address %>
+            <%= renting.place.zipcode %> <%= renting.place.city %></p>
+            <p>
+            <b>Checkin</b> : <%= renting.checkin.httpdate.first(16) %>
+            </p>
+            <p>
+            <b>Checkout</b> : <%= renting.checkout.httpdate.first(16) %>
+            </p>
+            <br>
+            <% if renting.guest_comment %>
+              <b>Your guest's feedback</b>
+              <br>
+              <i class="fa fa-quote-left"></i> <em><%= renting.guest_comment %></em>
+              <br>
+              <b>Your guest's rating:</b>
+              <br><%= renting.guest_rating %> <i class="fa fa-star-o"></i>
+            <% end %>
+            <%= image_tag renting.place.picture(:thumb), class: "pic-index image img_places img-circle align-center" %>
+          </div>
+            <% if Time.now.to_i < (Time.parse(renting.checkin.to_s).to_i) %>
+              <% if renting.status %>
+                <h4>Status: <%= renting.status %></h4>
                 <% elsif %>
-                  <div class="">
+                <div>
                   <%= button_to "Approve", { action: :update, id: renting.id }, params: { status: "Approved" }, method: :patch, class: "btn btn-success form-control btn-approve" %>
                   or
                   <%= button_to "Refuse", { action: :update, id: renting.id }, params: { status: "Refused" }, method: :patch, class: "btn btn-danger form-control btn-approve" %>
-                  </div>
-                <% end %>
-              <% else %>
-                <div>
-                  <% if renting.host_comment.nil? %>
-                    <p>Leave a feedback about your guest</p>
-                    <%= simple_form_for renting do |f| %>
-                      <div class="labels-form">
-                        <%= f.error_notification %>
-                        <%= f.input :host_comment, input_html: {value: ""}, label: 'Leave a comment about your guest' %>
-                        <%= f.input :host_rating, input_html: {value: ""}, label: 'Give a rating between 1 and 5' %>
-                        <%= f.submit 'Post your feedback' %>
-                        <% end %>
-
-                      </div>
-                    <% end %>
+                </div>
               <% end %>
-
+            <% else %>
+              <div>
+                <% if renting.host_comment.nil? %>
+                  <p>Leave a feedback about your guest</p>
+                  <%= simple_form_for renting do |f| %>
+                    <div class="labels-form">
+                      <%= f.error_notification %>
+                      <%= f.input :host_comment, input_html: {value: ""}, label: 'Leave a comment about your guest' %>
+                      <%= f.input :host_rating, input_html: {value: ""}, label: 'Give a rating between 1 and 5' %>
+                      <%= f.submit 'Post your feedback' %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            <% end %>
           </div>
         </div>
-
-    <% end %>
-  </div>
-</div>
+      <% end %>
+    </div>
 </div>
 
 
