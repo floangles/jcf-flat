@@ -1,5 +1,5 @@
 #bg_signin {
-  background: url("bgdevise.png") no-repeat center center fixed;
+  background: url("sign_up.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -8,19 +8,22 @@
 
 
 .h3 {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   font-family: "Helvetica";
-  font-size: 40px;
-  text-align: center;
-  color: $red;
+  font-size: 20px;
+  text-align: right;
+  color: rgb(150,150,150);
   border: solid 1px;
   border-color: transparent;
-
+  text-decoration: overline;
 }
 
-.margin {
 
-  margin:20px;
+
+
+.btn-marg {
+  margin-bottom: 89px;
+  margin-top: 27px;
 
 }
