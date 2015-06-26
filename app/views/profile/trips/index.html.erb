@@ -13,14 +13,23 @@
       <div class="col-sm-4">
         <div class="card">
         <h3> <%= trip.place.name %> </h3>
-        <%= image_tag trip.place.picture, class: "pic-index image" %>
-        <h4> Rate: <%= trip.place.rate %></h4>
+        <div class="relative">
+          <%= image_tag trip.place.picture, class: "pic-index image" %>
+          <div  class="position-price2">
+            <h4> price: <%= trip.place.rate %></h4>
+          </div>
+        </div>
+
         <p> City: <%= trip.place.city %></p>
         <p> <%= trip.guests %> guests</p>
         <p> Checkin: <%= trip.checkin %></p>
         <p> Checkout: <%= trip.checkout %></p>
 
 
+        <%= link_to "Cancel my reservation", profile_trip_path(trip),
+          method: :delete,
+          data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+        <%= link_to "show", profile_trip_path(trip), class: "btn btn-success" %>
         <% if Time.now.to_i < (Time.parse(trip.checkin.to_s).to_i) %>
           <% if trip.status %>
             <h4>Status: <%= trip.status %></h4>
@@ -28,15 +37,9 @@
             <h4>Status: Pending</h4>
           <% end %>
 
-
-
-
         <% end %>
-        <%= link_to "Cancel my reservation", profile_trip_path(trip),
-          method: :delete,
-          data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-        <%= link_to "show", profile_trip_path(trip), class: "btn btn-success" %>
         </div>
+
       </div>
     <% end %>
   </div>
