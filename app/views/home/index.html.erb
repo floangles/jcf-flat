@@ -41,7 +41,7 @@
         <div class="col-xs-12, col-sm-4 pics-padding-bottom">
           <%= link_to place_path(place) do %>
             <div class="text-center relative">
-              <%= image_tag place.picture.url(:medium), class: "image-home" %>
+              <%= image_tag place.picture.url(:medium), class: "image-home image-size" %>
               <p><%= image_tag place.user.picture.url(:medium), class: "img-circle img-position2" %></p>
               <p class="position-price-home"><%= place.rate %> € / night</p>
               <p class= "city-position"><%= place.city %></p>
