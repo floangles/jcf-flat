@@ -58,18 +58,37 @@
   <h4 id="h4_featured">you'll be home every night</h4>
   <div class="container">
     <div class="row">
-      <% @places.each do |place| %>
         <div class="col-xs-12, col-sm-4 pics-padding-bottom">
-        <%= link_to place_path(place) do %>
           <div class="card text-center">
-            <%= image_tag place.picture.url(:medium), class: "image2" %>
-
-            <p class="text-center"><%= place.name%></p>
+            <p class="position-card">
+              <%= link_to "Barcelone", places_path(city: "Barcelona"), class: "country-link" %>
+            </p>
+            <%=image_tag "barcelona.jpg", class: "image2" %>
           </div>
-
         </div>
-        <% end %>
-        <% end %>
+        <div class="col-xs-12, col-sm-4 pics-padding-bottom">
+          <div class="card text-center">
+            <p class="position-card">
+              <%= link_to "Paris", places_path(city: "Paris"), class: "country-link" %>
+            </p>
+            <%=image_tag "paris.jpg", class: "image2" %>
+          </div>
+        </div>
+        <div class="col-xs-12, col-sm-4 pics-padding-bottom">
+          <div class="card text-center">
+            <p class="position-card">
+             <%= link_to "Rio", places_path(city: "Rio"), class: "country-link" %>
+            </p>
+            <%=image_tag "rio.jpeg", class: "image2" %>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+         <div class="card text-center">
+        <p class="btn btn-danger">discover more !</p>
+          </div>
+      </div>
     </div>
   </div>
 </div>

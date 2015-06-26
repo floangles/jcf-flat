@@ -1,24 +1,53 @@
 
-#footer {
-  background-color: rgb(10,10,10);
-  // color: $gray-lighter;
-  background-image:asset-url('footer.jpg');
-  opacity: 0,6;
-  background-size: cover;
-  font-family : "Open Sans";
+// #footer {
+//   background-color: rgb(10,10,10);
+//   // color: $gray-lighter;
+//   background-size: cover;
+//   font-family : "Open Sans";
+//   font-size: 15px;
+//   padding: 50px 20px;
+//   color: rgb(250,250,250);
+//   text-align: right;
+//   margin-left: 0px;
+//   margin-right: 0px;
+
+//   .fa-footer {
+//   line-height: 10px;
+//   font-size: 30px;
+//   margin-bottom: 40px;
+//   padding-right: 20px;
+//   color: rgb(30,30,30);
+//   color: $white;
+//   &:hover {
+//     color: $red;
+//   }
+//   }
+// }
+
+ #text-align-left {
+  text-align: left;
+  padding: 20px;
+  font-size:30px;
+
+}
+#text-align-right {
+  text-align: right;
   font-size: 15px;
-  // padding: 20px;
-  height: 200px;
+  padding: 20px;
+  color: RGB(250,250,250);
+}
 
-  padding: 50px 20px;
-  color: $white;
-  background-color: #D2D7D3;
-  margin-left: 0px;
-  margin-right: 0px;
+#text-align-center {
+  text-align: center;
+  color: $red;
+  &:hover {
+    color: $white;
+  }
+}
 
-  .fa-footer {
-  line-height: 18px;
-  font-size: 45px;
+.fa-footer {
+  line-height: 10px;
+  font-size: 30px;
   margin-bottom: 40px;
   padding-right: 20px;
   color: rgb(30,30,30);
@@ -27,11 +56,10 @@
     color: $red;
   }
   }
-}
 
-#text-align-right {
-  text-align: right;
-}
-.row-padded {
-  padding-top: 30px;
+
+#footer {
+  background-color: rgb(20,20,20);
+  padding-top: 40px;
+  padding-bottom: 40px;
 }

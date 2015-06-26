@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-xs-offset-8 col-xs-4 ">
         <h3 class="h3">
-        Sign up and rent a castle !
+          Sign up and rent a castle !
         </h3>
     </div>
   </div>
@@ -23,21 +23,21 @@
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           <%= f.input :password_confirmation, required: true %>
           <div class="form-actions">
-            <%= f.button :submit, "Sign Up Now!",class: "btn btn-danger center-block" %>
+            <%= f.button :submit, "Sign Up Now!",class: "btn btn-danger btn-marg" %>
 
-          <div class="btn btn-default margin">
-            <%- if controller_name != 'sessions' %>
-              <%= link_to "Log in", new_session_path(resource_name) %><br />
-            <% end -%>
-          </div>
 
-          <div class= "btn btn-default margin">
-            <%- if devise_mapping.omniauthable? %>
-              <%- resource_class.omniauth_providers.each do |provider| %>
-                <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+              <%- if controller_name != 'sessions' %>
+                <%= link_to "Log in", new_session_path(resource_name), class: "btn btn-success btn-marg" %>
               <% end -%>
-            <% end -%>
-          </div>
+
+
+
+              <%- if devise_mapping.omniauthable? %>
+                <%- resource_class.omniauth_providers.each do |provider| %>
+                  <%= link_to "#{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-primary btn-marg" %>
+                <% end -%>
+              <% end -%>
+
         </div>
         </div>
       </div>
