@@ -52,7 +52,7 @@
                   <br><%= renting.guest_rating %> <i class="fa fa-star-o"></i>
                 <% end %>
 
-           <!--    <%= image_tag renting.place.picture(:thumb), class: "pic-index image img_places img-circle align-center" %> -->
+             <%= image_tag renting.place.picture(:thumb), class: "pic-index image img_places img-circle align-center" %>
               </div>
               <% if Time.now.to_i < (Time.parse(renting.checkin.to_s).to_i) %>
                 <% if renting.status %>
