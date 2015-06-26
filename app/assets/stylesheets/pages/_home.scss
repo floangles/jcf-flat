@@ -11,94 +11,95 @@ margin-top: 0px;
 }
 
 .navbar {
-  margin-bottom: 0px;
+ margin-bottom: 0px;
 }
 
 #home_title {
-  font-size: 50px;
-  color: $black;
- }
+ font-size: 50px;
+ color: $black;
+}
 
 #h2_home {
-  font-size: 30px;
-  color: $gray-darker;
+ font-size: 30px;
+ color: $gray-darker;
 
 }
 #featured {
-  margin: 50px;
+ margin: 50px;
 }
 
 .featured_image {
- width: 200px;
- height: 200px;
+width: 200px;
+height: 200px;
 }
 
 .text_featured {
-  color: $gray-dark;
-  font-size:15px;
-  text-align: center;
+ color: $gray-dark;
+ font-size:15px;
+ text-align: center;
 
 }
 
 #h2_featured {
-  text-align: center;
-  // margin-bottom: 50px;
-  font-family: $header-font;
+ text-align: center;
+ // margin-bottom: 50px;
+ font-family: $header-font;
 }
 
 #h4_featured {
-  text-align: center;
-  margin-bottom: 50px;
-  font-family: $header-font;
+ text-align: center;
+ margin-bottom: 50px;
+ font-family: $header-font;
 }
 
 .pics-padding-bottom {
-  padding: 20px;
+ padding: 20px;
 }
 .title_cool {
-  background-color: rgba(250,250,250,0.2);
-  margin-bottom: 10px;
-  border: 1px solid;
-  border-radius: 3%;
-  border-color:rgba(240,240,240,0.2);
+ background-color: rgba(250,250,250,0.2);
+ margin-bottom: 10px;
+ border: 1px solid;
+ border-radius: 3%;
+ border-color:rgba(240,240,240,0.2);
 }
 #guest-btn {
-  width: 110px;
+ width: 110px;
 }
 #date-btn {
-  width: 150px;
+ width: 150px;
 }
 #submit-btn {
-  width: 150px;
+ width: 150px;
 }
 
 .position-home {
-  position:absolute;
-  bottom: 200px;
+ position:absolute;
+ bottom: 200px;
 }
-
 
 
 .position-card {
-  position:absolute;
-  bottom: 300px;
-  left: 40px;
-  border-style: solid;
-  border-width: 0px;
-  background-color: rgba(250,250,250,0.3);
-  font-size: 30px;
-  padding-left: 20px;
-  padding-right: 40px;
+ position:absolute;
+ bottom: 300px;
+ left: 40px;
+ border-style: solid;
+ border-width: 0px;
+ background-color: rgba(250,250,250,0.3);
+ font-size: 30px;
+ padding-left: 20px;
+ padding-right: 40px;
 }
 
 .country-link {
-  color: white
+ color: white
 }
 
 .research-bar {
+
   padding-top: 20px;
   padding-bottom: 20px;
   margin-bottom: 30px;
+
 }
 
 
@@ -108,6 +109,7 @@ margin-top: 0px;
 // }
 
 .text-center {
+
   text-align:center;
 }
 
@@ -129,7 +131,17 @@ margin-top: 0px;
   color: white;
   font-size: 30px;
   text-shadow: black 0.1em 0.1em 0.2em;
+ text-align:center;
 }
+
+.padd {
+ padding: 50px 0px;
+}
+
+.padd-img {
+ padding: 20px 0px;
+}
+
 
 .absolutebis {
 position: absolute;
@@ -145,6 +157,7 @@ text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 .absolute2 {
+
   position: absolute;
   background-color: transparent;
   border-radius: 2px;
@@ -172,3 +185,17 @@ text-shadow: black 0.1em 0.1em 0.2em;
 .relative {
   position: relative;
 }
+
+ position: absolute;
+ background-color: transparent;
+ border-radius: 2px;
+ padding-top: 20px;
+ padding-bottom: 20px;
+ top: 200px;
+ left: 326px;
+ color: white;
+ font-size: 30px;
+ text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+

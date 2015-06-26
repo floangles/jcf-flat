@@ -12,7 +12,20 @@
 }
 
 .card2 {
+  margin-left: 20px;
+  margin-right: 120px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
 
+.card-form {
+  box-shadow: black 1px, 1px, 1px;
+  background-color: rgb(246,246,246);
   margin-left: 20px;
   margin-right: 120px;
   padding-top: 30px;
