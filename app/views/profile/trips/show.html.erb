@@ -1,17 +1,21 @@
-<div class="image_div text-center">
+<div class="image_div relative">
+  <div class="position-price4">
+    <p><%= @trip.place.rate %> €</p>
+  </div>
+    <div id="map", style="width: 18%; height: 230px; position:absolute; border-radius: 50%; top: 50px; right: 10px; border: 2px solid white;">
+    </div>
 </div>
 
 <div class="container med-padded-top med-padded-bottom">
   <div class="row">
     <div class="col-sm-6">
       <h3 class=""><%= @trip.place.name%></h3>
-      <br>
-      <p><b>Rate: </b><%= @trip.place.rate%> euros</p>
-      <p><b>Address in <%= @trip.place.city%></b>: <%= @trip.place.address%> <%= @trip.place.zipcode%></p>
+      <p><b>City : </b><%= @trip.place.city%></p>
+      <p><b>Adresse : </b> <%= @trip.place.address%> <%= @trip.place.zipcode%></p>
       <p><b>Description: </b><%= @trip.place.description%></p>
-      <p>Up to <%= @trip.place.capacity%> <b>guests</b></p>
-      <p><%= @trip.place.rooms%> <b>rooms</b></p>
-      <p><%= @trip.place.beds%> <b>beds</b></p>
+      <p><b>Capacity : </b><%= @trip.place.capacity%> guests </p>
+      <p> <b>rooms</b> : <%= @trip.place.rooms%></p>
+      <p><b>beds</b> : <%= @trip.place.beds%></p>
       <!-- <p class="med-padded-bottom">available :<%= @trip.place.available%></p> -->
       <%= link_to "Back to the list", profile_trips_path, class: "btn btn-primary" %>
     </div>
@@ -19,12 +23,12 @@
       <div class=" text-center" >
         <h3>Booking informations</h3>
         <br>
-        <h5 class= "">From : <%= @trip.checkin.httpdate.first(16)%></h5>
-        <h5>To: <%= @trip.checkout.httpdate.first(16) %></h5>
-        <h5>Number of guests : <%= @trip.guests%></h5>
+        <h5><b>From</b> : <%= @trip.checkin.httpdate.first(16)%></h5>
+        <h5><b>To</b> : <%= @trip.checkout.httpdate.first(16) %></h5>
+        <h5><b>Number of guests </b> : <%= @trip.guests%></h5>
         <br>
-        <h5>Your host is: <%= @trip.place.user.first_name %> <%= @trip.place.user.last_name %></h5>
-        <p><%= image_tag @trip.place.user.picture.url(:thumb), class: "img-circle" %></p>
+        <h5><b>Your host is </b>: <%= @trip.place.user.first_name %> <%= @trip.place.user.last_name %></h5>
+        <p><%= image_tag @trip.place.user.picture.url(:thumb), class: "img-circle border-img" %></p>
       </div>
     </div>
     <div class="col-sm-6">
@@ -55,11 +59,24 @@
   </div>
 
 
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+      handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function(){
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        handler.getMap().setZoom(13);
+      });
+    })
+  <% end %>
+<% end %>
 
 <style media="screen">
   .image_div { background-image: url(<%= @trip.place.picture %>);
     position: relative;
-    padding: 300px 0;
+    padding: 201px 0;
     background-size: cover;
     background-position: center center;
    }

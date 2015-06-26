@@ -20,9 +20,7 @@
     <% @places.each do |place| %>
       <div class="col-sm-4">
         <div class="card">
-          <p><b><%= place.name%></b></p>
-          <p><%= place.city%></p>
-          <p> <%= place.rooms%> rooms</p>
+          <p><b><%= place.name%> : </b> <%= place.rooms%> rooms</p>
           <div class="relative">
           <%= image_tag place.picture.url(:medium), class: "image2" %>
           <p> <%= image_tag place.user.picture.url(:medium), class: "img-circle img-position" %>
