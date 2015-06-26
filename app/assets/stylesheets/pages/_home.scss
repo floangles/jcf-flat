@@ -95,9 +95,11 @@ height: 200px;
 }
 
 .research-bar {
- padding-top: 20px;
- padding-bottom: 20px;
- margin-bottom: 30px;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+
 }
 
 
@@ -107,6 +109,28 @@ height: 200px;
 // }
 
 .text-center {
+
+  text-align:center;
+}
+
+.padd {
+  padding: 50px 0px;
+}
+
+.padd-img {
+  padding: 20px 0px;
+}
+.absolute {
+  position: absolute;
+  background-color: transparent;
+  border-radius: 2px;
+  top: 200px;
+  left: 169px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+  font-size: 30px;
+  text-shadow: black 0.1em 0.1em 0.2em;
  text-align:center;
 }
 
@@ -117,18 +141,7 @@ height: 200px;
 .padd-img {
  padding: 20px 0px;
 }
-.absolute {
- position: absolute;
- background-color: transparent;
- border-radius: 2px;
- top: 200px;
- left: 169px;
- padding-top: 20px;
- padding-bottom: 20px;
- color: white;
- font-size: 30px;
- text-shadow: black 0.1em 0.1em 0.2em;
-}
+
 
 .absolutebis {
 position: absolute;
@@ -144,30 +157,34 @@ text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 .absolute2 {
- position: absolute;
- background-color: transparent;
- border-radius: 2px;
- padding-top: 20px;
- padding-bottom: 20px;
- top: 200px;
- left: 326px;
- color: white;
- font-size: 30px;
- text-shadow: black 0.1em 0.1em 0.2em;
+
+  position: absolute;
+  background-color: transparent;
+  border-radius: 2px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  top: 200px;
+  left: 326px;
+  color: white;
+  font-size: 30px;
+  text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 .absolute3 {
- position: absolute;
- background-color: transparent;
- border-radius: 2px;
- padding-top: 20px;
- padding-bottom: 20px;
- top: 200px;
- left: 61px;
- color: white;
- text-shadow: black 0.1em 0.1em 0.2em;
- font-size: 30px;
+  position: absolute;
+  background-color: transparent;
+  border-radius: 2px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  top: 200px;
+  left: 61px;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  font-size: 30px;
 }
 .relative {
- position: relative;
-} (edited)
+  position: relative;
+}
+
+
+

@@ -53,42 +53,71 @@
   </div>
 </div>
 
-<div id="featured">
+<div>
   <h3 id="h2_featured">Travel the world</h3>
   <h4 id="h4_featured">you'll be home every night</h4>
+<div class="padd">
   <div class="container">
     <div class="row">
-        <div class="col-xs-12, col-sm-4 pics-padding-bottom">
-          <div class="card text-center">
-            <p class="position-card">
-              <%= link_to "Barcelone", places_path(city: "Barcelona"), class: "country-link" %>
-            </p>
-            <%=image_tag "barcelona.jpg", class: "image2" %>
+      <div class="col-xs-12, col-sm-5 padd-img">
+        <div class="relative">
+          <%= link_to places_path(city: "Barcelona") do %>
+          <%=image_tag "barcelona.jpg", class: "resize-feature" %>
+          <% end %>
+          <div class="absolutebis">
+            Barcelone
+            <!-- mettre ma relative -->
           </div>
         </div>
-        <div class="col-xs-12, col-sm-4 pics-padding-bottom">
-          <div class="card text-center">
-            <p class="position-card">
-              <%= link_to "Paris", places_path(city: "Paris"), class: "country-link" %>
-            </p>
-            <%=image_tag "paris.jpg", class: "image2" %>
-          </div>
-        </div>
-        <div class="col-xs-12, col-sm-4 pics-padding-bottom">
-          <div class="card text-center">
-            <p class="position-card">
-             <%= link_to "Rio", places_path(city: "Rio"), class: "country-link" %>
-            </p>
-            <%=image_tag "rio.jpeg", class: "image2" %>
+      </div>
+      <div class="col-xs-12, col-sm-4 padd-img">
+        <div class="relative">
+          <%= link_to places_path(city: "Paris") do %>
+          <%=image_tag "paris.jpg", class: "resize-feature" %>
+          <% end %>
+          <div class="absolute">
+             Paris
+             <!-- mettre ma relative -->
           </div>
         </div>
     </div>
     <div class="row">
-      <div class="col-xs-12">
-         <div class="card text-center">
-        <p class="btn btn-danger">discover more !</p>
+      <div class="col-xs-12, col-sm-8 padd-img">
+        <div class="relative">
+          <%= link_to places_path(city: "Rio") do %>
+          <%=image_tag "rio.jpg" %>
+          <% end %>
+          <div class="absolute2">
+             Rio
+             <!-- mettre ma relative -->
           </div>
+        </div>
+      </div>
+      <div class="col-xs-12, col-sm-4 padd-img">
+        <div class="relative">
+          <%= link_to places_path(city: "San Francisco") do %>
+          <%=image_tag "sanfran.jpg" %>
+          <% end %>
+          <div class="absolute3">
+             San Francisco
+    <!-- mettre ma relative -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+          <div class="col-xs-12">
+
+              <%= link_to "discover more !", places_path, class: "btn btn-danger" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+
+
+
+
+
+
