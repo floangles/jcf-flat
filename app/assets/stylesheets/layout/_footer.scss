@@ -1,30 +1,12 @@
+#footer {
+  background-color: rgb(20,20,20);
+  padding-top: 40px;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+}
 
-// #footer {
-//   background-color: rgb(10,10,10);
-//   // color: $gray-lighter;
-//   background-size: cover;
-//   font-family : "Open Sans";
-//   font-size: 15px;
-//   padding: 50px 20px;
-//   color: rgb(250,250,250);
-//   text-align: right;
-//   margin-left: 0px;
-//   margin-right: 0px;
 
-//   .fa-footer {
-//   line-height: 10px;
-//   font-size: 30px;
-//   margin-bottom: 40px;
-//   padding-right: 20px;
-//   color: rgb(30,30,30);
-//   color: $white;
-//   &:hover {
-//     color: $red;
-//   }
-//   }
-// }
-
- #text-align-left {
+#text-align-left {
   text-align: left;
   padding: 20px;
   font-size:30px;
@@ -56,10 +38,3 @@
     color: $red;
   }
   }
-
-
-#footer {
-  background-color: rgb(20,20,20);
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
